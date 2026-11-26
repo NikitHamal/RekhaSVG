@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" data-rekhasvg-version="1.0" data-domain="chemistry" data-theme="print" style="background:#FFFFFF;font-family:'Poppins','Noto Sans Devanagari',sans-serif;">
+  <title>osmosis_membrane_glassware</title>
+  <defs>
+    <marker id="rekha-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#4F378B" />
+    </marker>
+  </defs>
+  <rect id="rekha-bg" width="512" height="512" fill="#FFFFFF" />
+  <g id="layer-fills" data-layer="fills">
+    <path d="M 310.00 146.00 C 309.09 145.29, 309.15 148.98, 308.00 149.00 C 273.12 149.63, 233.81 145.82, 199.00 148.00 C 196.27 148.17, 198.73 155.82, 196.00 156.00 C 158.32 158.49, 106.08 130.75, 78.00 156.00 C 52.54 178.89, 73.93 228.90, 77.00 263.00 C 77.34 266.73, 86.19 263.72, 88.00 267.00 C 90.47 271.49, 90.47 278.51, 88.00 283.00 C 86.19 286.28, 77.29 283.27, 77.00 287.00 C 73.91 326.56, 40.56 397.85, 78.00 411.00 C 185.19 448.64, 340.65 478.15, 433.00 412.00 C 499.60 364.30, 467.81 230.62, 434.00 156.00 C 418.55 121.90, 354.32 159.01, 317.00 156.00 C 313.11 155.69, 313.08 148.40, 310.00 146.00 Z" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-1" />
+  </g>
+  <g id="layer-strokes" data-layer="strokes">
+    <polyline points="304.00,359.00 309.00,360.00 309.00,367.00 306.00,368.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-1" />
+    <polyline points="253.00,328.00 258.00,327.00 264.00,332.00 264.00,340.00 260.00,344.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-2" />
+    <polyline points="254.00,327.00 248.00,332.00 247.00,338.00 252.00,344.00 258.00,344.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-3" />
+    <polyline points="225.00,294.00 230.00,293.00 236.00,298.00 237.00,303.00 232.00,310.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-4" />
+    <polyline points="226.00,293.00 219.00,303.00 224.00,310.00 230.00,310.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-5" />
+    <polyline points="279.00,288.00 284.00,287.00 290.00,292.00 290.00,300.00 286.00,304.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-6" />
+    <polyline points="280.00,287.00 274.00,292.00 274.00,300.00 278.00,304.00 284.00,304.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-7" />
+    <polyline points="197.00,265.00 203.00,265.00 203.00,366.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-8" />
+    <polyline points="112.00,265.00 130.00,265.00 130.00,341.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-9" />
+    <polyline points="249.00,247.00 254.00,246.00 260.00,251.00 260.00,259.00 256.00,263.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-10" />
+    <polyline points="250.00,246.00 243.00,256.00 248.00,263.00 254.00,263.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-11" />
+    <polyline points="275.00,207.00 280.00,206.00 286.00,211.00 286.00,219.00 282.00,223.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-12" />
+    <polyline points="276.00,206.00 269.00,216.00 274.00,223.00 280.00,223.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-13" />
+    <polyline points="229.00,197.00 234.00,196.00 240.00,201.00 240.00,209.00 236.00,213.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-14" />
+    <polyline points="230.00,196.00 224.00,201.00 223.00,207.00 227.00,212.00 234.00,213.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-15" />
+    <polyline points="382.00,179.00 400.00,179.00 400.00,341.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-16" />
+    <polyline points="120.00,178.00 130.00,180.00 130.00,263.00 122.00,264.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-17" />
+    <polyline points="121.00,97.00 121.00,177.00 112.00,179.00 112.00,263.00 78.00,263.00 78.00,138.00 78.00,262.00 50.00,262.00 112.00,262.00 112.00,342.00 130.00,342.00 130.00,264.00 197.00,264.00 197.00,367.00 291.00,367.00 246.50,411.50 140.00,411.50 140.00,406.00 155.00,385.00 137.00,412.00 78.00,412.00 78.00,285.00 78.00,412.00 133.00,412.00 134.00,416.00 121.00,435.00 138.00,411.00 241.00,411.00 241.00,416.00 230.49,426.51 244.04,412.96 248.00,411.00 368.00,411.00 373.00,426.00 370.00,412.00 434.00,412.00 434.00,138.19 434.00,341.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-18" />
+    <polyline points="394.00,81.00 394.00,177.00 382.00,179.00 382.00,341.00 390.00,342.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-19" />
+  </g>
+  <g id="layer-dashed" data-layer="dashed">
+  </g>
+  <g id="layer-arrows" data-layer="arrows">
+    <line x1="240.00" y1="82.00" x2="240.00" y2="205.00" fill="none" stroke="#4F378B" stroke-width="1.87" stroke-linecap="round" marker-end="url(#rekha-arrow)" data-callout="callout-2" class="rekha-callout-arrow" />
+    <line x1="84.00" y1="80.00" x2="117.00" y2="167.00" fill="none" stroke="#4F378B" stroke-width="1.87" stroke-linecap="round" marker-end="url(#rekha-arrow)" data-callout="callout-4" class="rekha-callout-arrow" />
+  </g>
+  <g id="layer-labels" data-layer="labels">
+    <g class="rekha-label-group" data-callout="callout-1" data-quiz-answer="Anode" data-lang="en" data-bbox="49.0,63.0,52.0,15.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="46.0" y="61.0" width="58.0" height="19.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="51.0" y="75.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-1">Anode</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-2" data-quiz-answer="Sol particle" data-lang="en" data-bbox="205.0,63.0,79.0,18.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="202.0" y="61.0" width="85.0" height="22.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="207.0" y="78.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-2">Sol particle</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-3" data-quiz-answer="Cathode" data-lang="en" data-bbox="359.0,63.0,62.0,15.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="356.0" y="61.0" width="68.0" height="19.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="361.0" y="75.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-3">Cathode</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-4" data-quiz-answer="+" data-lang="en" data-bbox="126.0,91.0,22.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="123.0" y="89.0" width="28.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="128.0" y="102.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-4">+</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-5" data-quiz-answer="-" data-lang="en" data-bbox="361.0,95.0,20.0,11.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="358.0" y="93.0" width="26.0" height="15.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="363.0" y="103.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-5">-</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-6" data-quiz-answer="Crysatalloide" data-lang="en" data-bbox="16.0,266.0,76.0,19.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="13.0" y="264.0" width="82.0" height="23.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="18.0" y="282.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-6">Crysatalloide</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-7" data-quiz-answer="semi permeable" data-lang="en" data-bbox="195.0,429.0,102.0,18.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="192.0" y="427.0" width="108.0" height="22.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="197.0" y="444.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-7">semi permeable</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-8" data-quiz-answer="Water +" data-lang="en" data-bbox="338.0,429.0,60.0,15.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="335.0" y="427.0" width="66.0" height="19.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="340.0" y="441.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-8">Water +</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-9" data-quiz-answer="Water" data-lang="en" data-bbox="85.0,439.0,48.0,15.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="82.0" y="437.0" width="54.0" height="19.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="87.0" y="451.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-9">Water</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-10" data-quiz-answer="Electrolyte" data-lang="en" data-bbox="339.0,447.0,75.0,18.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="336.0" y="445.0" width="81.0" height="22.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="341.0" y="462.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-10">Electrolyte</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-11" data-quiz-answer="membrane" data-lang="en" data-bbox="195.0,450.0,74.0,16.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="192.0" y="448.0" width="80.0" height="20.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="197.0" y="463.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-11">membrane</text>
+    </g>
+  </g>
+</svg>

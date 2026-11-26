@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" data-rekhasvg-version="1.0" data-domain="biology" data-theme="print" style="background:#FFFFFF;font-family:'Poppins','Noto Sans Devanagari',sans-serif;">
+  <title>Neural v1 biology #1</title>
+  <defs>
+    <marker id="rekha-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#4F378B" />
+    </marker>
+  </defs>
+  <rect id="rekha-bg" width="512" height="512" fill="#FFFFFF" />
+  <g id="layer-fills" data-layer="fills">
+    <ellipse cx="252.77" cy="253.96" rx="136.80" ry="116.13" transform="rotate(172.92 252.77 253.96)" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-1" />
+  </g>
+  <g id="layer-strokes" data-layer="strokes">
+    <path d="M 311.00 265.00 C 315.48 266.28, 321.05 266.53, 325.00 269.00 C 329.03 271.52, 333.02 275.68, 335.00 280.00 C 336.74 283.79, 337.39 289.07, 336.00 293.00 C 335.14 295.43, 331.24 295.72, 329.00 297.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-1" />
+    <path d="M 295.00 262.00 C 300.12 262.64, 308.54 259.47, 311.00 264.00 C 316.06 273.32, 313.04 286.44, 314.00 297.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-2" />
+    <path d="M 221.00 214.00 C 227.08 215.60, 234.45 216.04, 240.00 219.00 C 244.39 221.34, 248.35 225.79, 251.00 230.00 C 253.91 234.63, 256.07 240.61, 257.00 246.00 C 257.71 250.11, 257.08 254.97, 256.00 259.00 C 254.81 263.42, 252.93 268.48, 250.00 272.00 C 246.35 276.38, 241.13 280.52, 236.00 283.00 C 231.59 285.13, 225.80 285.04, 221.00 286.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-3" />
+    <path d="M 248.00 146.00 C 252.16 146.32, 262.48 143.10, 261.00 147.00 C 252.47 169.53, 238.50 193.55, 223.00 212.00 C 217.46 218.60, 204.96 216.92, 198.00 222.00 C 192.62 225.93, 187.48 232.51, 186.00 239.00 C 184.08 247.45, 184.41 258.11, 188.00 266.00 C 191.28 273.21, 199.48 278.50, 206.00 283.00 C 209.00 285.07, 213.35 286.00, 217.00 286.00 C 223.16 286.00, 230.65 286.04, 236.00 283.00 C 243.08 278.98, 249.98 272.08, 254.00 265.00 C 257.04 259.65, 257.53 252.13, 257.00 246.00 C 256.53 240.55, 253.91 234.63, 251.00 230.00 C 248.35 225.79, 244.29 221.52, 240.00 219.00 C 234.76 215.93, 220.13 218.78, 222.00 213.00 C 229.89 188.67, 242.19 158.37, 264.00 145.00 C 278.23 136.28, 299.18 150.66, 315.00 156.00 C 325.99 159.71, 337.67 166.12, 347.00 173.00 C 357.38 180.66, 368.18 190.74, 376.00 201.00 C 382.77 209.88, 387.92 221.61, 392.00 232.00 C 394.38 238.08, 395.55 245.49, 396.00 252.00 C 396.51 259.35, 396.92 267.89, 395.00 275.00 C 391.41 288.31, 386.20 303.24, 379.00 315.00 C 372.85 325.04, 363.00 334.41, 354.00 342.00 C 346.53 348.30, 336.74 353.63, 328.00 358.00 C 326.28 358.86, 322.95 359.67, 322.00 358.00 C 319.75 354.07, 320.64 348.48, 320.00 344.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-4" />
+    <path d="M 110.00 67.00 C 154.48 91.00, 205.14 116.89, 249.00 142.00 C 250.15 142.66, 249.28 145.68, 248.00 146.00 C 235.75 149.06, 221.17 148.62, 209.00 152.00 C 197.95 155.07, 186.07 160.51, 176.00 166.00 C 168.36 170.17, 160.44 176.14, 154.00 182.00 C 146.29 189.01, 138.07 197.53, 132.00 206.00 C 127.41 212.40, 123.69 220.60, 121.00 228.00 C 118.53 234.78, 116.41 242.79, 116.00 250.00 C 115.44 259.92, 115.86 271.29, 118.00 281.00 C 120.07 290.40, 123.57 301.05, 129.00 309.00 C 137.56 321.53, 148.82 334.94, 161.00 344.00 C 174.21 353.82, 191.65 361.06, 207.00 367.00 C 215.84 370.42, 226.59 371.90, 236.00 373.00 C 245.86 374.15, 257.16 375.27, 267.00 374.00 C 284.56 371.73, 307.24 350.86, 321.00 362.00 C 336.83 374.81, 327.23 404.82, 330.00 425.00 C 330.53 428.86, 328.64 416.84, 328.00 413.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-5" />
+  </g>
+  <g id="layer-dashed" data-layer="dashed">
+    <polyline points="140.50,305.00 364.50,305.00" fill="none" stroke="#49454F" stroke-width="1.76" stroke-dasharray="6,5" stroke-linecap="round" data-dashed-id="dashed-1" />
+  </g>
+  <g id="layer-arrows" data-layer="arrows">
+  </g>
+  <g id="layer-labels" data-layer="labels">
+    <g class="rekha-label-group" data-callout="callout-1" data-quiz-answer="माइटोकोन्ड्रिया (Mitochondria)" data-lang="ne" data-bbox="54.0,42.0,210.0,20.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="51.0" y="40.0" width="216.0" height="24.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="56.0" y="59.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-1">माइटोकोन्ड्रिया (Mitochondria)</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-2" data-quiz-answer="कोष झिल्ली (Cell Membrane)" data-lang="ne" data-bbox="264.0,52.0,214.0,18.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="261.0" y="50.0" width="220.0" height="22.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="266.0" y="67.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-2">कोष झिल्ली (Cell Membrane)</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-3" data-quiz-answer="semi permeable" data-lang="en" data-bbox="284.0,432.0,138.0,17.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="281.0" y="430.0" width="144.0" height="21.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="286.0" y="446.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-3">semi permeable</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-4" data-quiz-answer="membrane" data-lang="en" data-bbox="284.0,454.0,94.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="281.0" y="452.0" width="100.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="286.0" y="465.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-4">membrane</text>
+    </g>
+  </g>
+</svg>

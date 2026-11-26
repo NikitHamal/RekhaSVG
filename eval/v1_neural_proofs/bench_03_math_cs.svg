@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" data-rekhasvg-version="1.0" data-domain="math_cs" data-theme="print" style="background:#FFFFFF;font-family:'Poppins','Noto Sans Devanagari',sans-serif;">
+  <title>Neural v1 math_cs #3</title>
+  <defs>
+    <marker id="rekha-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#4F378B" />
+    </marker>
+  </defs>
+  <rect id="rekha-bg" width="512" height="512" fill="#FFFFFF" />
+  <g id="layer-fills" data-layer="fills">
+    <circle cx="204.99" cy="299.98" r="47.56" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-1" />
+  </g>
+  <g id="layer-strokes" data-layer="strokes">
+    <path d="M 197.00 253.00 C 201.80 252.68, 207.25 251.26, 212.00 252.00 C 217.70 252.89, 224.11 254.94, 229.00 258.00 C 234.57 261.48, 240.09 266.73, 244.00 272.00 C 247.58 276.83, 250.79 283.11, 252.00 289.00 C 253.41 295.90, 253.51 304.12, 252.00 311.00 C 250.56 317.57, 247.01 324.60, 243.00 330.00 C 239.48 334.74, 234.13 339.09, 229.00 342.00 C 224.33 344.64, 218.12 345.40, 213.00 347.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-1" />
+    <path d="M 120.00 153.00 C 121.28 153.00, 123.01 152.19, 124.00 153.00 C 154.28 177.66, 192.09 201.93, 217.00 232.00 C 221.66 237.63, 211.88 247.67, 206.00 252.00 C 199.93 256.46, 189.46 253.12, 183.00 257.00 C 174.46 262.12, 166.83 270.93, 161.00 279.00 C 158.27 282.78, 157.42 288.36, 157.00 293.00 C 156.45 299.06, 155.81 306.32, 158.00 312.00 C 161.42 320.86, 167.19 330.38, 174.00 337.00 C 179.13 341.99, 187.04 345.34, 194.00 347.00 C 200.85 348.63, 209.12 348.51, 216.00 347.00 C 222.57 345.56, 229.96 342.45, 235.00 338.00 C 241.19 332.54, 246.81 324.62, 250.00 317.00 C 252.74 310.45, 253.36 302.10, 253.00 295.00 C 252.71 289.34, 251.09 282.76, 248.00 278.00 C 243.20 270.59, 236.37 262.86, 229.00 258.00 C 222.83 253.94, 210.41 257.55, 207.00 251.00 C 204.03 245.29, 210.53 229.59, 216.00 233.00 C 255.92 257.87, 292.84 296.92, 329.00 327.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-2" />
+    <polyline points="101.00,64.00 120.00,150.00 120.00,370.00 379.78,370.00 335.26,325.48" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-3" />
+  </g>
+  <g id="layer-dashed" data-layer="dashed">
+    <polyline points="257.00,252.50 123.50,367.00" fill="none" stroke="#49454F" stroke-width="1.76" stroke-dasharray="6,5" stroke-linecap="round" data-dashed-id="dashed-1" />
+  </g>
+  <g id="layer-arrows" data-layer="arrows">
+    <line x1="326.83" y1="422.17" x2="374.00" y2="375.00" fill="none" stroke="#4F378B" stroke-width="1.87" stroke-linecap="round" marker-end="url(#rekha-arrow)" data-callout="callout-3" class="rekha-callout-arrow" />
+  </g>
+  <g id="layer-labels" data-layer="labels">
+    <g class="rekha-label-group" data-callout="callout-1" data-quiz-answer="A ∩ B" data-lang="en" data-bbox="53.0,45.0,51.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="50.0" y="43.0" width="57.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="55.0" y="56.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-1">A ∩ B</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-2" data-quiz-answer="NAND Gate" data-lang="en" data-bbox="264.0,55.0,99.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="261.0" y="53.0" width="105.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="266.0" y="66.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-2">NAND Gate</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-3" data-quiz-answer="r = 5 cm" data-lang="en" data-bbox="284.0,433.0,75.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="281.0" y="431.0" width="81.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="286.0" y="444.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-3">r = 5 cm</text>
+    </g>
+  </g>
+</svg>

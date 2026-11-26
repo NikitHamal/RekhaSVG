@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" data-rekhasvg-version="1.0" data-domain="chemistry" data-theme="print" style="background:#FFFFFF;font-family:'Poppins','Noto Sans Devanagari',sans-serif;">
+  <title>Neural v1 chemistry #2</title>
+  <defs>
+    <marker id="rekha-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#4F378B" />
+    </marker>
+  </defs>
+  <rect id="rekha-bg" width="512" height="512" fill="#FFFFFF" />
+  <g id="layer-fills" data-layer="fills">
+    <circle cx="239.96" cy="300.03" r="61.54" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-1" />
+  </g>
+  <g id="layer-strokes" data-layer="strokes">
+    <path d="M 236.00 238.00 C 242.08 238.32, 249.16 237.29, 255.00 239.00 C 262.55 241.21, 270.76 245.20, 277.00 250.00 C 283.47 254.97, 289.97 261.91, 294.00 269.00 C 298.15 276.30, 300.39 285.76, 302.00 294.00 C 302.98 299.03, 303.49 305.10, 302.00 310.00 C 298.92 320.13, 294.10 331.34, 288.00 340.00 C 283.94 345.76, 277.30 350.85, 271.00 354.00 C 262.94 358.03, 252.64 359.44, 244.00 362.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-1" />
+    <polyline points="224.00,223.00 228.00,223.00 237.00,234.00 236.00,238.00 232.00,238.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-2" />
+    <path d="M 311.00 76.00 C 315.48 120.16, 343.87 173.82, 325.00 214.00 C 315.24 234.79, 275.86 204.12, 257.00 191.00 C 250.43 186.43, 256.33 158.00, 256.00 166.00 C 255.03 189.34, 260.37 216.26, 255.00 239.00 C 253.82 243.99, 243.37 240.68, 239.00 238.00 C 232.61 234.08, 225.53 227.34, 224.00 220.00 C 220.48 203.08, 224.00 183.28, 224.00 166.00 C 224.00 150.96, 224.94 197.99, 224.00 213.00 C 223.94 214.01, 221.65 214.78, 221.00 214.00 C 187.31 173.32, 74.05 55.70, 118.00 85.00 C 162.87 114.91, 193.56 171.49, 224.00 216.00 C 228.34 222.34, 227.34 233.08, 224.00 240.00 C 221.93 244.28, 214.16 242.69, 210.00 245.00 C 205.41 247.55, 200.52 251.11, 197.00 255.00 C 191.46 261.13, 185.77 268.65, 182.00 276.00 C 179.59 280.69, 178.26 286.73, 178.00 292.00 C 177.61 300.02, 179.36 309.00, 180.00 317.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-3" />
+  </g>
+  <g id="layer-dashed" data-layer="dashed">
+    <polyline points="192.50,315.00 288.00,315.00" fill="none" stroke="#49454F" stroke-width="1.76" stroke-dasharray="6,5" stroke-linecap="round" data-dashed-id="dashed-1" />
+  </g>
+  <g id="layer-arrows" data-layer="arrows">
+  </g>
+  <g id="layer-labels" data-layer="labels">
+    <g class="rekha-label-group" data-callout="callout-1" data-quiz-answer="semi permeable" data-lang="en" data-bbox="54.0,43.0,124.0,18.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="51.0" y="41.0" width="130.0" height="22.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="56.0" y="58.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-1">semi permeable</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-2" data-quiz-answer="membrane" data-lang="en" data-bbox="54.0,66.0,85.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="51.0" y="64.0" width="91.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="56.0" y="77.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-2">membrane</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-3" data-quiz-answer="Electrolyte" data-lang="en" data-bbox="264.0,54.0,87.0,17.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="261.0" y="52.0" width="93.0" height="21.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="266.0" y="68.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-3">Electrolyte</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-4" data-quiz-answer="Cathode" data-lang="en" data-bbox="284.0,432.0,67.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="281.0" y="430.0" width="73.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="286.0" y="443.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-4">Cathode</text>
+    </g>
+  </g>
+</svg>

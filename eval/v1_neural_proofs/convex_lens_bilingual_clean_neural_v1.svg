@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" data-rekhasvg-version="1.0" data-domain="physics" data-theme="print" style="background:#FFFFFF;font-family:'Poppins','Noto Sans Devanagari',sans-serif;">
+  <title>convex_lens_bilingual_clean</title>
+  <defs>
+    <marker id="rekha-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#4F378B" />
+    </marker>
+  </defs>
+  <rect id="rekha-bg" width="512" height="512" fill="#FFFFFF" />
+  <g id="layer-fills" data-layer="fills">
+    <path d="M 356.00 389.00 C 351.87 392.10, 349.69 398.12, 348.00 403.00 C 346.74 406.64, 343.15 415.00, 347.00 415.00 C 352.43 415.00, 356.14 407.62, 359.00 403.00 C 360.53 400.54, 360.61 396.83, 360.00 394.00 C 359.57 392.00, 357.64 387.77, 356.00 389.00 Z" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-1" />
+    <path d="M 253.00 346.00 C 249.96 346.00, 241.28 347.64, 244.00 349.00 C 248.29 351.15, 254.30 348.02, 259.00 349.00 C 262.23 349.67, 265.44 351.93, 268.00 354.00 C 272.22 357.42, 277.26 361.31, 280.00 366.00 C 281.96 369.36, 279.94 374.70, 282.00 378.00 C 282.85 379.36, 285.37 375.56, 285.00 374.00 C 283.61 368.15, 280.64 361.79, 277.00 357.00 C 274.37 353.53, 269.96 350.81, 266.00 349.00 C 262.12 347.22, 257.27 346.00, 253.00 346.00 Z" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-2" />
+    <path d="M 401.00 283.00 C 391.13 287.93, 392.83 306.38, 384.00 313.00 C 378.47 317.14, 389.86 298.85, 389.00 292.00 C 388.43 287.45, 384.82 300.79, 383.00 305.00 C 379.70 312.64, 375.89 321.20, 373.00 329.00 C 372.67 329.90, 372.18 332.49, 373.00 332.00 C 375.14 330.71, 378.56 323.56, 378.00 326.00 C 374.93 339.42, 361.55 353.68, 365.00 367.00 C 366.96 374.56, 379.77 358.81, 385.00 353.00 C 388.74 348.85, 388.39 341.27, 392.00 337.00 C 393.03 335.78, 395.67 338.43, 396.00 340.00 C 397.37 346.59, 397.00 367.73, 397.00 361.00 C 397.00 343.72, 395.11 324.26, 396.00 307.00 C 396.40 299.17, 408.02 279.49, 401.00 283.00 Z" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-3" />
+  </g>
+  <g id="layer-strokes" data-layer="strokes">
+    <path d="M 254.00 347.00 C 259.44 348.60, 266.09 349.17, 271.00 352.00 C 274.73 354.15, 277.79 358.31, 280.00 362.00 C 281.72 364.86, 283.32 368.67, 283.00 372.00 C 282.33 378.96, 281.49 387.65, 277.00 393.00 C 272.40 398.48, 263.40 399.80, 257.00 403.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-1" />
+    <polyline points="318.00,135.00 405.00,135.00 405.00,258.00 400.00,262.00 405.00,262.00 405.00,374.50 356.00,374.50 355.00,369.00 391.00,287.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-2" />
+    <path d="M 219.00 135.00 C 243.64 135.32, 285.59 113.66, 296.00 136.00 C 312.09 170.53, 284.18 216.29, 274.00 253.00 C 273.04 256.45, 266.47 254.13, 263.00 255.00 C 260.80 255.55, 267.83 253.35, 270.00 254.00 C 271.53 254.46, 273.23 256.42, 273.00 258.00 C 269.32 283.15, 263.87 311.27, 258.00 336.00 C 257.67 337.39, 254.31 336.60, 254.00 338.00 C 253.49 340.27, 257.71 343.41, 256.00 345.00 C 251.99 348.72, 244.69 348.19, 240.00 351.00 C 236.51 353.10, 233.05 356.48, 231.00 360.00 C 228.45 364.37, 230.94 373.91, 226.00 375.00 C 206.31 379.34, 183.16 375.00, 163.00 375.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-3" />
+    <path d="M 103.00 62.00 C 149.40 84.40, 202.24 108.31, 248.00 132.00 C 249.42 132.74, 245.60 134.96, 244.00 135.00 C 199.54 136.24, 127.36 97.55, 105.00 136.00 C 66.71 201.84, 70.94 305.88, 105.00 374.00 C 122.03 408.06, 186.22 369.20, 224.00 374.00 C 229.54 374.70, 227.19 385.91, 231.00 390.00 C 236.20 395.59, 243.51 401.54, 251.00 403.00 C 257.78 404.32, 265.86 401.17, 272.00 398.00 C 275.64 396.12, 278.10 391.63, 280.00 388.00 C 282.01 384.14, 279.74 375.88, 284.00 375.00 C 304.06 370.87, 327.57 372.48, 348.00 374.00 C 350.14 374.16, 351.14 377.86, 351.00 380.00 C 350.79 383.14, 348.28 386.12, 347.00 389.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-4" />
+  </g>
+  <g id="layer-dashed" data-layer="dashed">
+    <polyline points="141.00,255.00 251.50,255.00" fill="none" stroke="#49454F" stroke-width="1.76" stroke-dasharray="6,5" stroke-linecap="round" data-dashed-id="dashed-1" />
+    <polyline points="285.15,254.92 364.50,255.00" fill="none" stroke="#49454F" stroke-width="1.76" stroke-dasharray="6,5" stroke-linecap="round" data-dashed-id="dashed-2" />
+  </g>
+  <g id="layer-arrows" data-layer="arrows">
+  </g>
+  <g id="layer-labels" data-layer="labels">
+    <g class="rekha-label-group" data-callout="callout-1" data-quiz-answer="उत्तल लेन्स (Convex Lens)" data-lang="ne" data-bbox="48.0,40.0,172.0,22.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="45.0" y="38.0" width="178.0" height="26.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="50.0" y="59.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-1">उत्तल लेन्स (Convex Lens)</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-2" data-quiz-answer="R₁ = 10 Ω" data-lang="en" data-bbox="259.0,50.0,78.0,21.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="256.0" y="48.0" width="84.0" height="25.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="261.0" y="68.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-2">R₁ = 10 Ω</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-3" data-quiz-answer="वास्तविक प्रतिबिम्ब" data-lang="ne" data-bbox="277.0,429.0,118.0,20.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="274.0" y="427.0" width="124.0" height="24.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="279.0" y="446.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-3">वास्तविक प्रतिबिम्ब</text>
+    </g>
+  </g>
+</svg>

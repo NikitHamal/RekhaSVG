@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" data-rekhasvg-version="1.0" data-domain="physics" data-theme="print" style="background:#FFFFFF;font-family:'Poppins','Noto Sans Devanagari',sans-serif;">
+  <title>Neural v1 physics #2</title>
+  <defs>
+    <marker id="rekha-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#4F378B" />
+    </marker>
+  </defs>
+  <rect id="rekha-bg" width="512" height="512" fill="#FFFFFF" />
+  <g id="layer-fills" data-layer="fills">
+    <ellipse cx="254.16" cy="260.75" rx="105.40" ry="21.27" transform="rotate(90.19 254.16 260.75)" fill="#E8DEF8" fill-opacity="0.55" stroke="none" data-fill-id="fill-1" />
+  </g>
+  <g id="layer-strokes" data-layer="strokes">
+    <polyline points="325.00,268.00 330.00,269.00 381.00,320.00 368.00,316.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-1" />
+    <polyline points="231.00,251.00 235.00,250.00 277.00,271.00 277.00,318.00 264.00,348.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-2" />
+    <polyline points="275.00,220.00 279.00,220.00 323.01,264.01 323.01,292.00 315.00,290.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-3" />
+    <polyline points="236.00,197.00 254.11,197.00 272.61,215.50 277.00,242.00 277.00,270.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-4" />
+    <polyline points="132.00,197.00 235.00,197.00 235.00,219.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-5" />
+    <polyline points="251.00,164.00 256.00,163.00 266.00,177.00 273.00,211.00 260.00,202.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-6" />
+    <polyline points="205.00,140.00 209.00,139.00 246.00,167.00 238.00,195.00 179.00,195.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-7" />
+    <path d="M 102.00 63.00 C 134.96 86.68, 173.59 111.30, 205.00 137.00 C 207.00 138.63, 203.06 142.45, 201.00 144.00 C 176.96 162.10, 140.54 172.86, 124.00 198.00 C 112.92 214.84, 124.00 261.00, 124.00 261.00 C 124.00 261.00, 122.76 218.12, 124.00 198.00 C 124.09 196.57, 126.70 195.40, 128.00 196.00 C 161.12 211.31, 206.57 219.02, 230.00 247.00 C 246.07 266.19, 232.99 300.15, 236.00 325.00 C 236.84 331.94, 238.87 339.75, 242.00 346.00 C 244.44 350.87, 248.08 356.67, 253.00 359.00 C 255.59 360.23, 259.37 357.35, 261.00 355.00 C 264.77 349.58, 267.68 342.46, 269.00 336.00 C 273.15 315.74, 261.71 284.74, 278.00 272.00 C 290.75 262.03, 317.15 278.34, 324.00 293.00 C 335.66 317.96, 326.72 351.48, 328.00 379.00" fill="none" stroke="#1D1B20" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round" data-stroke-id="stroke-8" />
+  </g>
+  <g id="layer-dashed" data-layer="dashed">
+    <polyline points="49.50,261.00 463.00,261.00" fill="none" stroke="#49454F" stroke-width="1.76" stroke-dasharray="6,5" stroke-linecap="round" data-dashed-id="dashed-1" />
+  </g>
+  <g id="layer-arrows" data-layer="arrows">
+  </g>
+  <g id="layer-labels" data-layer="labels">
+    <g class="rekha-label-group" data-callout="callout-1" data-quiz-answer="V = IR" data-lang="en" data-bbox="54.0,44.0,50.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="51.0" y="42.0" width="56.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="56.0" y="55.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-1">V = IR</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-2" data-quiz-answer="F = ma" data-lang="en" data-bbox="264.0,54.0,58.0,14.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="261.0" y="52.0" width="64.0" height="18.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="266.0" y="65.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-2">F = ma</text>
+    </g>
+    <g class="rekha-label-group" data-callout="callout-3" data-quiz-answer="वास्तविक प्रतिबिम्ब" data-lang="ne" data-bbox="284.0,430.0,106.0,17.0" style="cursor:pointer;">
+      <rect class="rekha-label-chip" x="281.0" y="428.0" width="112.0" height="21.0" rx="5" fill="#FFFFFF" fill-opacity="0.82" stroke="none" />
+      <text x="286.0" y="444.0" fill="#1D1B20" font-size="14.0" font-weight="600" data-callout="callout-3">वास्तविक प्रतिबिम्ब</text>
+    </g>
+  </g>
+</svg>

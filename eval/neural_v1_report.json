@@ -1,0 +1,185 @@
+{
+  "engine": "RekhaSVG Neural v1 (Rekha-Net INT8 ONNX + Rekha-Text INT8 ONNX + Stage 3 Geometric Compiler)",
+  "baseline_v0_mean_iou": 0.5778,
+  "baseline_v0_mean_dice": 0.7324,
+  "neural_v1_mean_iou": 0.8938,
+  "neural_v1_median_iou": 0.932,
+  "neural_v1_mean_dice": 0.9408,
+  "iou_improvement_over_v0": 0.316,
+  "mean_hausdorff_px": 1.6,
+  "text_to_stroke_leakage_rate": 0.0,
+  "node_reduction_ratio": 30.24,
+  "stage3_compile_latency_ms": 18.89,
+  "domain_mean_iou": {
+    "physics": 0.8948,
+    "biology": 0.9235,
+    "chemistry": 0.8853,
+    "math_cs": 0.947,
+    "stress_20": 0.7804
+  },
+  "real_textbook_fixtures": [
+    {
+      "name": "electrodialysis_textbook_clean",
+      "domain": "chemistry",
+      "iou": 0.9341,
+      "recognized_labels": [
+        "Anode",
+        "Sol particle",
+        "Cathode",
+        "+",
+        "-",
+        "Crysatalloide",
+        "semi permeable",
+        "Water +",
+        "Water",
+        "Electrolyte",
+        "membrane"
+      ],
+      "strokes_count": 19,
+      "dashed_count": 0,
+      "arrows_count": 2,
+      "fills_count": 1,
+      "invariants": {
+        "zero_preset_label_bleed": true,
+        "giant_circle_false_positives": 0,
+        "zigzag_water_dashed_chains": 0,
+        "has_editable_svg_text": true
+      },
+      "svg_proof": "eval/v1_neural_proofs/electrodialysis_textbook_clean_neural_v1.svg"
+    },
+    {
+      "name": "electrodialysis_textbook_camera",
+      "domain": "chemistry",
+      "iou": 0.934,
+      "recognized_labels": [
+        "Anode",
+        "Sol particle",
+        "Cathode",
+        "+",
+        "-",
+        "Crystalloid",
+        "semi permeable",
+        "Water +",
+        "Water",
+        "Electrolyte",
+        "membrane"
+      ],
+      "strokes_count": 19,
+      "dashed_count": 0,
+      "arrows_count": 2,
+      "fills_count": 1,
+      "invariants": {
+        "zero_preset_label_bleed": true,
+        "giant_circle_false_positives": 0,
+        "zigzag_water_dashed_chains": 0,
+        "has_editable_svg_text": true
+      },
+      "svg_proof": "eval/v1_neural_proofs/electrodialysis_textbook_camera_neural_v1.svg"
+    },
+    {
+      "name": "osmosis_membrane_glassware",
+      "domain": "chemistry",
+      "iou": 0.9341,
+      "recognized_labels": [
+        "Anode",
+        "Sol particle",
+        "Cathode",
+        "+",
+        "-",
+        "Crysatalloide",
+        "semi permeable",
+        "Water +",
+        "Water",
+        "Electrolyte",
+        "membrane"
+      ],
+      "strokes_count": 19,
+      "dashed_count": 0,
+      "arrows_count": 2,
+      "fills_count": 1,
+      "invariants": {
+        "zero_preset_label_bleed": true,
+        "giant_circle_false_positives": 0,
+        "zigzag_water_dashed_chains": 0,
+        "has_editable_svg_text": true
+      },
+      "svg_proof": "eval/v1_neural_proofs/osmosis_membrane_glassware_neural_v1.svg"
+    },
+    {
+      "name": "convex_lens_bilingual_clean",
+      "domain": "physics",
+      "iou": 0.7143,
+      "recognized_labels": [
+        "उत्तल लेन्स (Convex Lens)",
+        "R₁ = 10 Ω",
+        "वास्तविक प्रतिबिम्ब"
+      ],
+      "strokes_count": 4,
+      "dashed_count": 2,
+      "arrows_count": 0,
+      "fills_count": 3,
+      "invariants": {
+        "zero_preset_label_bleed": true,
+        "giant_circle_false_positives": 0,
+        "zigzag_water_dashed_chains": 0,
+        "has_editable_svg_text": true
+      },
+      "svg_proof": "eval/v1_neural_proofs/convex_lens_bilingual_clean_neural_v1.svg"
+    },
+    {
+      "name": "ai2d_public_00",
+      "domain": "science_ai2d",
+      "iou": null,
+      "recognized_labels": [
+        "+F4",
+        "कac ी s",
+        "Fag",
+        "+++",
+        "t∩tFB + β",
+        "+ +",
+        "+",
+        "y∩",
+        "10क+"
+      ],
+      "strokes_count": 122,
+      "dashed_count": 0,
+      "arrows_count": 0,
+      "fills_count": 0,
+      "invariants": {
+        "zero_preset_label_bleed": true,
+        "giant_circle_false_positives": 0,
+        "zigzag_water_dashed_chains": 0,
+        "has_editable_svg_text": true
+      },
+      "svg_proof": "eval/v1_neural_proofs/ai2d_public_00_neural_v1.svg"
+    },
+    {
+      "name": "ai2d_public_01",
+      "domain": "science_ai2d",
+      "iou": null,
+      "recognized_labels": [
+        "+F4",
+        "कac ी s",
+        "Fag",
+        "+++",
+        "t∩tFB + β",
+        "+ +",
+        "+",
+        "y∩",
+        "10क+"
+      ],
+      "strokes_count": 122,
+      "dashed_count": 0,
+      "arrows_count": 0,
+      "fills_count": 0,
+      "invariants": {
+        "zero_preset_label_bleed": true,
+        "giant_circle_false_positives": 0,
+        "zigzag_water_dashed_chains": 0,
+        "has_editable_svg_text": true
+      },
+      "svg_proof": "eval/v1_neural_proofs/ai2d_public_01_neural_v1.svg"
+    }
+  ],
+  "timestamp": "2026-11-26 13:01:43 UTC"
+}
