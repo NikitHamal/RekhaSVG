@@ -149,6 +149,21 @@ if p.returncode != 0:
     return execute_python(py_code, timeout=timeout)
 
 
+def spawn_detached(cmd: str, log_path: str) -> dict:
+    b64_cmd = base64.b64encode(cmd.encode("utf-8")).decode("ascii")
+    py_code = f"""
+import base64, os, subprocess
+cmd = base64.b64decode("{b64_cmd}").decode("utf-8")
+os.makedirs(os.path.dirname("{log_path}") or "/", exist_ok=True)
+with open("{log_path}", "ab") as lf, open("/dev/null", "rb") as dn:
+    p = subprocess.Popen(["/bin/bash", "-c", cmd], stdin=dn, stdout=lf, stderr=lf, start_new_session=True, close_fds=True)
+with open("/tmp/rekhasvg_pids.txt", "a", encoding="utf-8") as pf:
+    pf.write(str(p.pid) + "\\n")
+print("SPAWNED_PID:", p.pid)
+"""
+    return execute_python(py_code, timeout=30)
+
+
 def upload_file(local_path: str, remote_path: str, mode: int = 0o644) -> dict:
     with open(local_path, "rb") as f:
         b64_data = base64.b64encode(f.read()).decode("ascii")
@@ -183,6 +198,9 @@ if __name__ == "__main__":
             sys.stdout.write(res["stdout"])
         if res["stderr"]:
             sys.stderr.write(res["stderr"])
+    elif mode == "bg":
+        res = spawn_detached(sys.argv[2], sys.argv[3])
+        print(res["stdout"], res["stderr"])
     elif mode == "upload":
         m_oct = int(sys.argv[4], 8) if len(sys.argv) > 4 else 0o644
         res = upload_file(sys.argv[2], sys.argv[3], m_oct)

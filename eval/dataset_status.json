@@ -1,16 +1,21 @@
 {
-  "total_generated": 32000,
-  "target": 32000,
+  "version": "v2_zero_tofu_textbook",
+  "zero_tofu_verified": true,
+  "total_generated": 16000,
+  "target": 16000,
+  "ocr_crops_generated": 96000,
+  "ocr_target": 96000,
   "domains": {
-    "physics": 8000,
-    "biology": 8000,
-    "chemistry": 8000,
-    "math_cs": 8000
+    "physics": 4000,
+    "biology": 4000,
+    "chemistry": 4000,
+    "math_cs": 4000
   },
   "bench_500_count": 500,
   "stress_20_count": 20,
-  "hf_synced_shards": 16,
+  "real_fixtures_count": 6,
+  "hf_synced_shards": 8,
   "hf_repo": "NikitHamal/rekhasvg-data",
-  "last_sync": "2026-11-26 12:00:06 UTC",
-  "rate_per_sec": 148.03
+  "last_sync": "2026-11-26 12:36:48 UTC",
+  "rate_per_sec": 346.98
 }

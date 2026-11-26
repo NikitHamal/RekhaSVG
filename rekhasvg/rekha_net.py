@@ -203,12 +203,30 @@ class RekhaNetLoss(nn.Module):
         edge_weight = 1.0 + 3.0 * ink_t
         loss_edge_l1 = (torch.abs(ink_p - ink_t) * edge_weight).mean()
 
-        total = loss_focal + loss_dice + self.cldice_weight * loss_cldice + 0.5 * loss_edge_l1
+        # Explicit penalty on false-positive text-to-stroke/dash/arrow leakage
+        text_gt = target_7ch[:, 5:6, :, :]
+        non_text_stroke_probs = probs[:, 1:4, :, :] * (1.0 - target_7ch[:, 1:4, :, :])
+        loss_text_leak = ((non_text_stroke_probs * text_gt) ** 2).mean() * 4.5
+
+        # Explicit penalty on water-hatch fill leaking into structural dashed channel
+        fill_gt = target_7ch[:, 4:5, :, :]
+        dash_fp = probs[:, 2:3, :, :] * (1.0 - target_7ch[:, 2:3, :, :])
+        loss_hatch_leak = ((dash_fp * fill_gt) ** 2).mean() * 3.0
+
+        total = (
+            loss_focal
+            + loss_dice
+            + self.cldice_weight * loss_cldice
+            + 0.5 * loss_edge_l1
+            + loss_text_leak
+            + loss_hatch_leak
+        )
         metrics = {
             "total": float(total.detach().item()),
             "focal": float(loss_focal.detach().item()),
             "dice": float(loss_dice.detach().item()),
             "cldice": float(loss_cldice.detach().item()),
             "edge_l1": float(loss_edge_l1.detach().item()),
+            "text_leak": float(loss_text_leak.detach().item()),
         }
         return total, metrics
