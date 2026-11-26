@@ -17,8 +17,9 @@ async function main() {
   const txtMb = fs.statSync(txtPath).size / (1024 * 1024);
 
   const ort = await import("onnxruntime-node");
-  const sessNet = await ort.InferenceSession.create(netPath);
-  const sessTxt = await ort.InferenceSession.create(txtPath);
+  const opts = { intraOpNumThreads: 4, interOpNumThreads: 1 };
+  const sessNet = await ort.InferenceSession.create(netPath, opts);
+  const sessTxt = await ort.InferenceSession.create(txtPath, opts);
 
   const imgData = new Float32Array(1 * 3 * 512 * 512);
   for (let i = 0; i < imgData.length; i++) imgData[i] = 0.5;
