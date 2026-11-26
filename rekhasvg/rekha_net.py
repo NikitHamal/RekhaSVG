@@ -113,6 +113,7 @@ class RekhaNet(nn.Module):
           channel 0: clean illumination-normalized ink logits
           channels 1..6: [strokes, dashed, arrows, fills, text, junctions] logits
         """
+        x = torch.clamp(x, 0.0, 1.0)
         in_size = x.shape[-2:]
         s0 = self.stem(x)
         s1 = self.enc1(s0)

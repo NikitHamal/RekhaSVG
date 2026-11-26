@@ -115,10 +115,9 @@ class RekhaText(nn.Module):
         self.head = nn.Linear(embed_dim, vocab_size)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = torch.clamp(x, 0.0, 1.0)
         feat = self.cnn_backbone(x)  # (B, D, 1, 48)
-        seq = feat.squeeze(2).transpose(1, 2)  # (B, 48, D)
-        if seq.shape[1] == self.pos_embed.shape[1]:
-            seq = seq + self.pos_embed
+        seq = feat.squeeze(2).transpose(1, 2) + self.pos_embed  # (B, 48, D)
         seq = self.blocks(seq)
         seq = self.norm(seq)
         logits = self.head(seq)  # (B, T, V)

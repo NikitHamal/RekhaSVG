@@ -96,7 +96,7 @@ def export_and_verify(
         net.load_state_dict(torch.load(net_ckpt, map_location="cpu"))
         net_trained = True
 
-    dummy_img = torch.randn(1, 3, 512, 512)
+    dummy_img = torch.rand(1, 3, 512, 512)
     with torch.no_grad():
         fp32_net_ref = net(dummy_img).numpy()
 
