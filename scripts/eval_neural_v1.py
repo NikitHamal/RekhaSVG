@@ -77,7 +77,7 @@ def main():
     }
     kernel = np.ones((3, 3), dtype=np.uint8)
 
-    eval_items = [it for i, it in enumerate(manifest) if (i % 4 == 0) or it.get("stress_mode")]
+    eval_items = [it for i, it in enumerate(manifest) if (i < 120) or it.get("stress_mode")]
     for idx, item in enumerate(eval_items):
         img_path = os.path.join(eval_dir, item["img"])
         mask_path = os.path.join(eval_dir, item["mask"])

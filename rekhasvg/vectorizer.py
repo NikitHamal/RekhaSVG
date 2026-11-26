@@ -315,6 +315,15 @@ class RekhaVectorizer:
                 x1, y1 = min(w, bx + bw + 3), min(h, by + bh + 3)
                 ch_text[y0:y1, x0:x1] = 255
 
+        # Hybridize on out-of-domain diagrams (e.g. AI2D cartoons) if neural masks are sparse
+        if np.count_nonzero(ch_text) < 25 and not known_labels:
+            ch_text_cls, _ = self._detect_classical_word_boxes(classical_ink.copy(), img_bgr)
+            ch_text = cv2.bitwise_or(ch_text, ch_text_cls)
+        if np.count_nonzero(ch_strokes) < 60:
+            work_ink = classical_ink.copy()
+            work_ink[ch_text > 0] = 0
+            ch_strokes = cv2.bitwise_or(ch_strokes, work_ink)
+
         text_excl = cv2.dilate(ch_text, np.ones((5, 5), np.uint8), iterations=1)
         ch_strokes[text_excl > 0] = 0
         ch_dashed[text_excl > 0] = 0
