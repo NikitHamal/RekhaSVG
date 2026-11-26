@@ -20,8 +20,8 @@
         </div>
       </div>
       <div class="badge-row">
-        <span class="tonal-pill success">10.68 MB Total INT8 ONNX (0 ConvInteger)</span>
-        <span class="tonal-pill">84 ms CPU / WASM</span>
+        <span class="tonal-pill success" id="onnx-status-pill">10.68 MB INT8 ONNX (0 ConvInteger)</span>
+        <span class="tonal-pill">Rekha-Net + Rekha-Text v1</span>
         <span class="tonal-pill">25.2× Fewer Nodes</span>
         <span class="tonal-pill" id="quiz-score-badge">Study Mode</span>
       </div>
@@ -116,6 +116,7 @@
     </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.2/dist/ort.min.js"></script>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
