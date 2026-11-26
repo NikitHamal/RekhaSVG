@@ -1,0 +1,9 @@
+{
+  "name": "rekhasvg",
+  "version": "1.0.0",
+  "description": "RekhaSVG — On-Device Textbook Diagram to Crisp Interactive SVG Converter",
+  "type": "module",
+  "scripts": {
+    "check": "node --check docs/engine/primitives.js && node --check docs/engine/svg_builder.js && node --check docs/engine/vectorizer.js"
+  }
+}
