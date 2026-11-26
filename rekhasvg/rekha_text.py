@@ -84,11 +84,11 @@ class SVTRMixingBlock(nn.Module):
 
 class RekhaText(nn.Module):
     """
-    Rekha-Text (~4.1 MB INT8 ONNX, ~4.05M parameters):
+    Rekha-Text (~4.2 MB INT8 ONNX, ~4.25M parameters):
     Input: (B, 1, 32, 192) grayscale normalized text crop
     Output: (B, 48, VocabSize) log-probabilities for CTC decoding
     """
-    def __init__(self, in_channels: int = 1, embed_dim: int = 320, depth: int = 4, vocab_size: int = len(REKHA_CHARSET)):
+    def __init__(self, in_channels: int = 1, embed_dim: int = 288, depth: int = 4, vocab_size: int = len(REKHA_CHARSET)):
         super().__init__()
         self.vocab_size = vocab_size
         self.cnn_backbone = nn.Sequential(

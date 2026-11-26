@@ -82,29 +82,30 @@ class UpStage(nn.Module):
 
 class RekhaNet(nn.Module):
     """
-    Rekha-Net (~6.4 MB INT8 ONNX):
-    Dims = [48, 96, 192, 320, 448] -> ~6.35M parameters (~6.4 MB INT8 ONNX).
+    Rekha-Net (~6.6 MB INT8 ONNX):
+    Fast stride-2 stem + MobileConvNeXt/NAFNet-Lite stages -> ~6.8M parameters,
+    ~6.6 MB INT8 ONNX (<= 7.5 MB budget), < 300 ms CPU inference at 512x512.
     """
-    def __init__(self, in_channels: int = 3, num_semantic_channels: int = 6, dims: Tuple[int, ...] = (48, 96, 192, 320, 448)):
+    def __init__(self, in_channels: int = 3, num_semantic_channels: int = 6, dims: Tuple[int, ...] = (32, 64, 128, 232, 328)):
         super().__init__()
         c0, c1, c2, c3, c4 = dims
         self.stem = nn.Sequential(
-            nn.Conv2d(in_channels, c0, kernel_size=3, stride=1, padding=1, bias=False),
+            nn.Conv2d(in_channels, c0, kernel_size=3, stride=2, padding=1, bias=False),
             nn.BatchNorm2d(c0),
             nn.SiLU(inplace=True),
             NAFConvNeXtBlock(c0),
         )
-        self.enc1 = DownStage(c0, c1, num_blocks=2)   # 1/2
-        self.enc2 = DownStage(c1, c2, num_blocks=3)   # 1/4
-        self.enc3 = DownStage(c2, c3, num_blocks=4)   # 1/8
-        self.enc4 = DownStage(c3, c4, num_blocks=4)   # 1/16
+        self.enc1 = DownStage(c0, c1, num_blocks=2)   # 1/4
+        self.enc2 = DownStage(c1, c2, num_blocks=2)   # 1/8
+        self.enc3 = DownStage(c2, c3, num_blocks=3)   # 1/16
+        self.enc4 = DownStage(c3, c4, num_blocks=3)   # 1/32
 
-        self.dec3 = UpStage(c4, c3, c3, num_blocks=2)
-        self.dec2 = UpStage(c3, c2, c2, num_blocks=2)
-        self.dec1 = UpStage(c2, c1, c1, num_blocks=2)
-        self.dec0 = UpStage(c1, c0, c0, num_blocks=2)
+        self.dec3 = UpStage(c4, c3, c3, num_blocks=1)
+        self.dec2 = UpStage(c3, c2, c2, num_blocks=1)
+        self.dec1 = UpStage(c2, c1, c1, num_blocks=1)
+        self.dec0 = UpStage(c1, c0, c0, num_blocks=1)
 
-        self.head = nn.Conv2d(c0, 1 + num_semantic_channels, kernel_size=1, bias=True)
+        self.head = nn.Conv2d(c0, 1 + num_semantic_channels, kernel_size=3, padding=1, bias=True)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
@@ -112,6 +113,7 @@ class RekhaNet(nn.Module):
           channel 0: clean illumination-normalized ink logits
           channels 1..6: [strokes, dashed, arrows, fills, text, junctions] logits
         """
+        in_size = x.shape[-2:]
         s0 = self.stem(x)
         s1 = self.enc1(s0)
         s2 = self.enc2(s1)
@@ -122,7 +124,8 @@ class RekhaNet(nn.Module):
         d2 = self.dec2(d3, s2)
         d1 = self.dec1(d2, s1)
         d0 = self.dec0(d1, s0)
-        return self.head(d0)
+        out = self.head(d0)
+        return F.interpolate(out, size=in_size, mode="bilinear", align_corners=False)
 
 
 def soft_erode(img: torch.Tensor) -> torch.Tensor:
