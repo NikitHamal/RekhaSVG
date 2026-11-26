@@ -81,11 +81,11 @@ class RekhaTextCropDataset(Dataset):
             for p, t in zip(pngs, texts):
                 self.samples.append((bytes(p), str(t), False))
 
-        # Also extract real bbox crops from shard_000 and shard_001 so Rekha-Text matches exact diagram crops
-        shard_files = sorted(glob.glob(os.path.join(data_dir, "shard_*.npz")))[:2]
+        # Also extract real bbox crops from shard_000 (first 600 diagrams) so Rekha-Text matches exact diagram crops
+        shard_files = sorted(glob.glob(os.path.join(data_dir, "shard_*.npz")))[:1]
         for sf in shard_files:
             sdata = np.load(sf, allow_pickle=True)
-            for j_bytes, meta_str in zip(sdata["jpgs"], sdata["metas"]):
+            for j_bytes, meta_str in list(zip(sdata["jpgs"], sdata["metas"]))[:600]:
                 meta = json.loads(str(meta_str))
                 img = cv2.imdecode(np.frombuffer(bytes(j_bytes), dtype=np.uint8), cv2.IMREAD_GRAYSCALE)
                 if img is None:
