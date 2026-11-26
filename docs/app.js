@@ -28,15 +28,28 @@ const state = {
     labels: true,
   },
   customLabels: [],
+  customImageRGBA: null,
+  customImageMeta: null,
   lastResult: null,
 };
 
 const vectorizer = new RekhaVectorizerJS({ theme: state.theme });
 
-function initStudio() {
+async function initStudio() {
   renderSampleButtons();
   bindControls();
   loadSample(0);
+  if (typeof window !== "undefined" && window.ort) {
+    const ok = await vectorizer.tryLoadOnnxModels(
+      window.ort,
+      "./models/rekha_net_int8.onnx",
+      "./models/rekha_text_int8.onnx"
+    );
+    const pill = document.getElementById("onnx-status-pill");
+    if (pill && ok) {
+      pill.textContent = "Rekha-Net + Rekha-Text INT8 ONNX Active (WASM)";
+    }
+  }
 }
 
 function renderSampleButtons() {
@@ -57,6 +70,8 @@ function renderSampleButtons() {
 
 function loadSample(idx) {
   state.activeSampleIdx = idx;
+  state.customImageRGBA = null;
+  state.customImageMeta = null;
   state.revealedCallouts.clear();
   state.selectedCallout = null;
   const samp = NEPAL_STEM_SAMPLES[idx];
@@ -69,9 +84,22 @@ function loadSample(idx) {
   renderLabelEditor();
 }
 
-function revectorizeActiveSample() {
-  const samp = NEPAL_STEM_SAMPLES[state.activeSampleIdx];
+async function revectorizeActiveSample() {
   vectorizer.cfg.theme = state.theme;
+  if (state.activeSampleIdx < 0 && state.customImageRGBA) {
+    const res = await vectorizer.vectorizeRGBAAsync(
+      state.customImageRGBA,
+      512,
+      512,
+      state.customLabels,
+      state.customImageMeta || { domain: "custom", title: "Uploaded Textbook Photo" }
+    );
+    state.lastResult = res;
+    renderSvgToStage(res);
+    updateTelemetryTiles(res);
+    return;
+  }
+  const samp = NEPAL_STEM_SAMPLES[Math.max(0, state.activeSampleIdx)];
   const res = vectorizer.compileFromChains({
     width: 512,
     height: 512,
@@ -195,7 +223,14 @@ function handleUploadedImage(file) {
   const reader = new FileReader();
   reader.onload = (ev) => {
     const img = new Image();
-    img.onload = () => {
+    img.onload = async () => {
+      // Clear 100% of previous preset labels and metadata so zero preset labels leak onto custom uploads
+      state.activeSampleIdx = -1;
+      state.customLabels = [];
+      state.revealedCallouts.clear();
+      state.selectedCallout = null;
+      renderSampleButtons();
+
       const beforeCanvas = document.getElementById("before-canvas");
       beforeCanvas.width = 512;
       beforeCanvas.height = 512;
@@ -205,14 +240,21 @@ function handleUploadedImage(file) {
       ctx.drawImage(img, 0, 0, 512, 512);
       const imgData = ctx.getImageData(0, 0, 512, 512);
 
-      vectorizer.cfg.theme = state.theme;
-      const res = vectorizer.vectorizeRGBA(imgData.data, 512, 512, state.customLabels, {
+      state.customImageRGBA = new Uint8ClampedArray(imgData.data);
+      state.customImageMeta = {
         domain: "custom",
         title: file.name || "Uploaded Textbook Photo",
-      });
+      };
+
+      vectorizer.cfg.theme = state.theme;
+      const res = vectorizer.vectorizeRGBAAsync
+        ? await vectorizer.vectorizeRGBAAsync(state.customImageRGBA, 512, 512, [], state.customImageMeta)
+        : vectorizer.vectorizeRGBA(state.customImageRGBA, 512, 512, [], state.customImageMeta);
+      state.customLabels = (res.labels || []).map((lb) => ({ ...lb }));
       state.lastResult = res;
       renderSvgToStage(res);
       updateTelemetryTiles(res);
+      renderLabelEditor();
     };
     img.src = ev.target.result;
   };

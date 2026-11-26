@@ -14,9 +14,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-MOLAB_URL = os.environ.get("MOLAB_URL", "https://sb-512e1e9b6c4d922b.sb.molab.run").rstrip("/")
-TOKEN_FILE = "/tmp/molab_token"
-SESSION_FILE = "/tmp/molab_session_id"
+MOLAB_URL = os.environ.get("MOLAB_URL", "https://sb-23410fd97ef00e15.sb.molab.run").rstrip("/")
+TOKEN_FILE = "/tmp/rekhasvg_molab_token"
+SESSION_FILE = "/tmp/rekhasvg_molab_session_id"
 
 
 def get_token() -> str:
@@ -25,7 +25,7 @@ def get_token() -> str:
     if os.path.exists(TOKEN_FILE):
         with open(TOKEN_FILE, "r", encoding="utf-8") as f:
             return f.read().strip()
-    raise RuntimeError("Missing /tmp/molab_token")
+    raise RuntimeError("Missing /tmp/rekhasvg_molab_token")
 
 
 def get_session_id() -> str:

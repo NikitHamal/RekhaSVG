@@ -119,18 +119,31 @@ def fit_taubin_circle(points: List[Point], max_rel_rmse: float = 0.065) -> Optio
     cy = my + vc
     radii = np.hypot(pts[:, 0] - cx, pts[:, 1] - cy)
     r = float(np.mean(radii))
-    if r < 5.0 or r > 2000.0:
+    if r < 8.0 or r > 240.0:
         return None
-    if start_end_dist > max(14.0, 0.45 * r):
+    bbox_w = float(np.max(pts[:, 0]) - np.min(pts[:, 0]))
+    bbox_h = float(np.max(pts[:, 1]) - np.min(pts[:, 1]))
+    if bbox_w < 1.65 * r or bbox_w > 2.35 * r or bbox_h < 1.65 * r or bbox_h > 2.35 * r:
+        return None
+    if start_end_dist > max(10.0, min(18.0, 0.35 * r)):
+        return None
+    diffs = np.diff(pts, axis=0)
+    arc_len = float(np.sum(np.hypot(diffs[:, 0], diffs[:, 1])))
+    if arc_len < 1.55 * math.pi * r:
         return None
     rmse = float(np.sqrt(np.mean((radii - r) ** 2)))
     rel_rmse = rmse / max(r, 1.0)
     if rel_rmse > max_rel_rmse:
         return None
     angles = np.arctan2(pts[:, 1] - cy, pts[:, 0] - cx)
-    unwrapped = np.unwrap(angles)
-    span = float(abs(unwrapped[-1] - unwrapped[0]))
-    if span < 1.35 * math.pi and float(np.ptp(angles)) < 1.55 * math.pi:
+    # Check 4-quadrant angular coverage to avoid branch-cut false positives
+    q_mask = [
+        np.any((angles >= 0.0) & (angles < 0.5 * math.pi)),
+        np.any((angles >= 0.5 * math.pi) & (angles <= math.pi)),
+        np.any((angles >= -math.pi) & (angles < -0.5 * math.pi)),
+        np.any((angles >= -0.5 * math.pi) & (angles < 0.0)),
+    ]
+    if sum(bool(q) for q in q_mask) < 4:
         return None
     return {
         "type": "circle",
@@ -147,7 +160,7 @@ def fit_ellipse_algebraic(points: List[Point], max_rel_rmse: float = 0.075) -> O
     Venn ovals, angled lenses).
     """
     n = len(points)
-    if n < 12:
+    if n < 16:
         return None
     pts = np.asarray(points, dtype=np.float64)
     cx = float(np.mean(pts[:, 0]))
@@ -160,10 +173,15 @@ def fit_ellipse_algebraic(points: List[Point], max_rel_rmse: float = 0.075) -> O
     # For a uniform ellipse boundary, mean(x^2) = a^2 / 2
     rx = float(math.sqrt(2.0 * max(eigvals[1], 1e-3)))
     ry = float(math.sqrt(2.0 * max(eigvals[0], 1e-3)))
-    if ry < 5.0 or rx / max(ry, 1e-6) > 6.0:
+    if ry < 8.0 or rx > 240.0 or rx / max(ry, 1e-6) > 6.0:
         return None
     start_end_dist = float(np.hypot(pts[0, 0] - pts[-1, 0], pts[0, 1] - pts[-1, 1]))
-    if start_end_dist > max(16.0, 0.45 * min(rx, ry)):
+    if start_end_dist > max(12.0, min(20.0, 0.35 * min(rx, ry))):
+        return None
+    diffs = np.diff(pts, axis=0)
+    arc_len = float(np.sum(np.hypot(diffs[:, 0], diffs[:, 1])))
+    mean_r = math.sqrt(0.5 * (rx * rx + ry * ry))
+    if arc_len < 1.45 * math.pi * mean_r:
         return None
     major_vec = eigvecs[:, 1]
     angle_rad = float(math.atan2(major_vec[1], major_vec[0]))
@@ -171,6 +189,8 @@ def fit_ellipse_algebraic(points: List[Point], max_rel_rmse: float = 0.075) -> O
     sin_a = math.sin(-angle_rad)
     xr = centered[:, 0] * cos_a - centered[:, 1] * sin_a
     yr = centered[:, 0] * sin_a + centered[:, 1] * cos_a
+    if not (np.any(xr > 0.3 * rx) and np.any(xr < -0.3 * rx) and np.any(yr > 0.3 * ry) and np.any(yr < -0.3 * ry)):
+        return None
     norm_r = np.sqrt((xr / rx) ** 2 + (yr / ry) ** 2)
     rel_rmse = float(np.sqrt(np.mean((norm_r - 1.0) ** 2)))
     if rel_rmse > max_rel_rmse:

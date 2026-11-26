@@ -145,23 +145,41 @@ export function fitTaubinCircle(points, maxRelRmse = 0.065) {
     rSum += rad;
   }
   const r = rSum / n;
-  if (r < 5.0 || r > 2000.0) return null;
-  if (startEndDist > Math.max(14.0, 0.45 * r)) return null;
+  if (r < 8.0 || r > 240.0) return null;
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  let arcLen = 0.0;
+  for (let i = 0; i < n; i++) {
+    const px = points[i][0];
+    const py = points[i][1];
+    if (px < minX) minX = px;
+    if (px > maxX) maxX = px;
+    if (py < minY) minY = py;
+    if (py > maxY) maxY = py;
+    if (i > 0) {
+      arcLen += Math.hypot(px - points[i - 1][0], py - points[i - 1][1]);
+    }
+  }
+  const bboxW = maxX - minX;
+  const bboxH = maxY - minY;
+  if (bboxW < 1.65 * r || bboxW > 2.35 * r || bboxH < 1.65 * r || bboxH > 2.35 * r) return null;
+  if (startEndDist > Math.max(10.0, Math.min(18.0, 0.35 * r))) return null;
+  if (arcLen < 1.55 * Math.PI * r) return null;
 
   let sqErr = 0.0;
-  let minAng = Infinity;
-  let maxAng = -Infinity;
+  let q0 = false, q1 = false, q2 = false, q3 = false;
   for (let i = 0; i < n; i++) {
     const diff = radii[i] - r;
     sqErr += diff * diff;
     const a = Math.atan2(points[i][1] - cy, points[i][0] - cx);
-    if (a < minAng) minAng = a;
-    if (a > maxAng) maxAng = a;
+    if (a >= 0.0 && a < 0.5 * Math.PI) q0 = true;
+    else if (a >= 0.5 * Math.PI && a <= Math.PI) q1 = true;
+    else if (a >= -Math.PI && a < -0.5 * Math.PI) q2 = true;
+    else if (a >= -0.5 * Math.PI && a < 0.0) q3 = true;
   }
   const rmse = Math.sqrt(sqErr / n);
   const relRmse = rmse / Math.max(r, 1.0);
   if (relRmse > maxRelRmse) return null;
-  if (maxAng - minAng < 1.35 * Math.PI) return null;
+  if (!(q0 && q1 && q2 && q3)) return null;
 
   return {
     type: "circle",
@@ -174,11 +192,15 @@ export function fitTaubinCircle(points, maxRelRmse = 0.065) {
 
 export function fitEllipseAlgebraic(points, maxRelRmse = 0.075) {
   const n = points ? points.length : 0;
-  if (n < 12) return null;
+  if (n < 16) return null;
   let cx = 0, cy = 0;
+  let arcLen = 0.0;
   for (let i = 0; i < n; i++) {
     cx += points[i][0];
     cy += points[i][1];
+    if (i > 0) {
+      arcLen += Math.hypot(points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]);
+    }
   }
   cx /= n;
   cy /= n;
@@ -204,26 +226,34 @@ export function fitEllipseAlgebraic(points, maxRelRmse = 0.075) {
 
   const rx = Math.sqrt(2.0 * eigMajor);
   const ry = Math.sqrt(2.0 * eigMinor);
-  if (ry < 5.0 || rx / Math.max(ry, 1e-6) > 6.0) return null;
+  if (ry < 8.0 || rx > 240.0 || rx / Math.max(ry, 1e-6) > 6.0) return null;
 
   const startEndDist = Math.hypot(
     points[0][0] - points[n - 1][0],
     points[0][1] - points[n - 1][1]
   );
-  if (startEndDist > Math.max(16.0, 0.45 * Math.min(rx, ry))) return null;
+  if (startEndDist > Math.max(12.0, Math.min(20.0, 0.35 * Math.min(rx, ry)))) return null;
+  const meanR = Math.sqrt(0.5 * (rx * rx + ry * ry));
+  if (arcLen < 1.45 * Math.PI * meanR) return null;
 
   const angleRad = 0.5 * Math.atan2(2.0 * c01, c00 - c11);
   const cosA = Math.cos(-angleRad);
   const sinA = Math.sin(-angleRad);
   let errSq = 0.0;
+  let posX = false, negX = false, posY = false, negY = false;
   for (let i = 0; i < n; i++) {
     const dx = points[i][0] - cx;
     const dy = points[i][1] - cy;
     const xr = dx * cosA - dy * sinA;
     const yr = dx * sinA + dy * cosA;
+    if (xr > 0.3 * rx) posX = true;
+    if (xr < -0.3 * rx) negX = true;
+    if (yr > 0.3 * ry) posY = true;
+    if (yr < -0.3 * ry) negY = true;
     const normR = Math.sqrt((xr / rx) ** 2 + (yr / ry) ** 2);
     errSq += (normR - 1.0) ** 2;
   }
+  if (!(posX && negX && posY && negY)) return null;
   const relRmse = Math.sqrt(errSq / n);
   if (relRmse > maxRelRmse) return null;
 
