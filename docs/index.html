@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RekhaSVG — On-Device Nepal Textbook Diagram to Crisp Interactive SVG Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@500;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="top-app-bar">
+      <div class="brand-group">
+        <div class="brand-mark">रे</div>
+        <div>
+          <h1 class="brand-title">RekhaSVG Live Interactive Studio</h1>
+          <p class="brand-subtitle">On-Device Nepal Textbook Diagram → Crisp Interactive SVG • SEE / NEB +2 / IOE / CEE</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <span class="tonal-pill success">10.68 MB Total INT8 ONNX (0 ConvInteger)</span>
+        <span class="tonal-pill">84 ms CPU / WASM</span>
+        <span class="tonal-pill">25.2× Fewer Nodes</span>
+        <span class="tonal-pill" id="quiz-score-badge">Study Mode</span>
+      </div>
+    </header>
+
+    <main class="studio-grid">
+      <!-- Left Column: Upload + 10 Curated Nepal STEM Presets + Inline Label Editor -->
+      <aside class="panel-card">
+        <h2 class="panel-heading">Snap or Drop Textbook Photo</h2>
+        <div class="upload-zone" id="upload-drop-zone">
+          <div style="font-weight:700;font-size:13.5px;color:#6750A4;">Drop Photo or Tap Phone Camera</div>
+          <div style="font-size:11.5px;color:#49454F;margin-top:3px;">Removes camera shadows, notebook lines &amp; perspective skew</div>
+          <input type="file" id="photo-upload-input" accept="image/*" capture="environment" hidden />
+        </div>
+
+        <h2 class="panel-heading">10 Curated Nepal STEM Diagrams</h2>
+        <div class="sample-list" id="sample-list"></div>
+
+        <h2 class="panel-heading" style="margin-top:16px;">Inline Bilingual Label Editor</h2>
+        <div class="label-editor-list" id="label-editor-list"></div>
+      </aside>
+
+      <!-- Right Column: Interactive Toolbar, Split Before/After Stage, Layer Inspector & Exports -->
+      <section class="panel-card">
+        <div class="toolbar-bar">
+          <div class="btn-group" aria-label="Semantic Layer Inspector">
+            <span style="font-size:12px;font-weight:700;align-self:center;margin-right:4px;">Layers:</span>
+            <button class="m3-btn active" data-toggle-layer="fills">Fills</button>
+            <button class="m3-btn active" data-toggle-layer="strokes">Strokes</button>
+            <button class="m3-btn active" data-toggle-layer="dashed">Dashed</button>
+            <button class="m3-btn active" data-toggle-layer="arrows">Arrows</button>
+            <button class="m3-btn active" data-toggle-layer="labels">Labels</button>
+          </div>
+
+          <div class="btn-group">
+            <button class="m3-btn quiz-btn" id="btn-quiz-mode">Exam Quiz / Flashcard Mode</button>
+          </div>
+        </div>
+
+        <div class="toolbar-bar">
+          <div class="btn-group" aria-label="Theme Switcher">
+            <span style="font-size:12px;font-weight:700;align-self:center;margin-right:4px;">Theme:</span>
+            <button class="m3-btn active" data-theme-opt="print">Crisp Print</button>
+            <button class="m3-btn" data-theme-opt="m3x_dark">M3X Dark</button>
+            <button class="m3-btn" data-theme-opt="blueprint">Blueprint</button>
+            <button class="m3-btn" data-theme-opt="color_coded">Color-Coded</button>
+          </div>
+
+          <div class="btn-group">
+            <button class="m3-btn primary" id="btn-export-svg">Export .SVG</button>
+            <button class="m3-btn" id="btn-export-png">Export High-DPI .PNG</button>
+            <button class="m3-btn" id="btn-export-html">Export Study .HTML</button>
+          </div>
+        </div>
+
+        <!-- Split Before / After Stage -->
+        <div class="comparison-stage" id="comparison-stage">
+          <div class="stage-svg-layer" id="svg-stage-container"></div>
+          <div class="stage-before-clip" id="before-clip-wrapper">
+            <canvas id="before-canvas" width="512" height="512"></canvas>
+          </div>
+          <div class="stage-divider-line" id="split-divider-line"></div>
+          <div class="stage-corner-tag before">BEFORE: Shadowed Camera Photo</div>
+          <div class="stage-corner-tag after">AFTER: Crisp Interactive SVG</div>
+        </div>
+
+        <div class="slider-control-row">
+          <span style="font-size:12px;font-weight:700;">Before/After Split:</span>
+          <input type="range" id="split-slider" min="0" max="100" value="38" />
+          <span id="split-pct-label" style="font-size:12px;font-weight:600;min-width:145px;text-align:right;">38% Photo / 62% SVG</span>
+        </div>
+
+        <div class="metrics-strip">
+          <div class="metric-tile">
+            <div class="metric-label">Compiler Latency</div>
+            <div class="metric-val" id="metric-latency">1.2 ms</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-label">Node Reduction</div>
+            <div class="metric-val" id="metric-reduction">25.2× fewer</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-label">SVG Primitives</div>
+            <div class="metric-val" id="metric-primitives">12</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-label">Interactive Callouts</div>
+            <div class="metric-val" id="metric-callouts">4 linked</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

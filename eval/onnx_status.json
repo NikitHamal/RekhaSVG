@@ -1,0 +1,14 @@
+{
+  "rekha_net_int8_mb": 6.31,
+  "rekha_text_int8_mb": 4.37,
+  "total_int8_mb": 10.68,
+  "budget_min_mb": 10.0,
+  "budget_max_mb": 15.0,
+  "within_budget": true,
+  "conv_integer_ops": 0,
+  "nan_count": 0,
+  "rekha_net_cpu_ms": 203.82,
+  "rekha_text_cpu_ms": 3.21,
+  "cpu_latency_ms": 207.03,
+  "status": "Verified INT8 ONNX (0 ConvInteger, 0 NaNs)"
+}

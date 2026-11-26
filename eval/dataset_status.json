@@ -1,0 +1,16 @@
+{
+  "total_generated": 32000,
+  "target": 32000,
+  "domains": {
+    "physics": 8000,
+    "biology": 8000,
+    "chemistry": 8000,
+    "math_cs": 8000
+  },
+  "bench_500_count": 500,
+  "stress_20_count": 20,
+  "hf_synced_shards": 16,
+  "hf_repo": "NikitHamal/rekhasvg-data",
+  "last_sync": "2026-11-26 12:00:06 UTC",
+  "rate_per_sec": 148.03
+}

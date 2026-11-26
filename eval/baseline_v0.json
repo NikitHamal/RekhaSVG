@@ -1,0 +1,23 @@
+{
+  "engine": "RekhaSVG Classical-Hybrid v0 (Stage 3 Deterministic Geometric Compiler)",
+  "n_samples": 520,
+  "bench_500_samples": 500,
+  "stress_20_samples": 20,
+  "mean_iou": 0.5778,
+  "median_iou": 0.5621,
+  "mean_dice": 0.7324,
+  "mean_hausdorff_px": 5.7,
+  "node_reduction_ratio": 25.17,
+  "mean_latency_ms": 84.35,
+  "median_latency_ms": 83.42,
+  "p95_latency_ms": 89.54,
+  "python_js_parity_iou": 1.0,
+  "domain_mean_iou": {
+    "physics": 0.4897,
+    "biology": 0.6399,
+    "chemistry": 0.5314,
+    "math_cs": 0.6508,
+    "stress_20": 0.5735
+  },
+  "timestamp": "2026-11-26 12:01:29 UTC"
+}
