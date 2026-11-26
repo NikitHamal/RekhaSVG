@@ -145,3 +145,29 @@ def test_end_to_end_vectorizer_latency_and_layers():
     for layer_id in ("layer-fills", "layer-strokes", "layer-dashed", "layer-arrows", "layer-labels"):
         assert f'id="{layer_id}"' in svg
     assert "उत्तल लेन्स" in svg
+
+
+def test_electrodialysis_guardrails_and_zero_tofu():
+    from scripts.gen_textbook_dataset import synthesize_electrodialysis_diagram, verify_zero_tofu
+
+    # 1. Zero-tofu assertion across Greek, math, subscript, and Devanagari glyphs
+    tofu_res = verify_zero_tofu()
+    assert tofu_res["zero_tofu_verified"] is True
+
+    # 2. Tiny open arc near branch cut (+/- pi) must NEVER snap into a giant Taubin circle
+    tiny_arc = [
+        (100.0 + 60.0 * math.cos(a), 100.0 + 60.0 * math.sin(a))
+        for a in np.linspace(math.pi - 0.08, math.pi + 0.08, 12)
+    ]
+    assert fit_taubin_circle(tiny_arc) is None
+
+    # 3. Electrodialysis colored diagram must have zero giant circle false positives and zero water zig-zags
+    s = synthesize_electrodialysis_diagram(seed=2026, clean_digital=True)
+    vec = RekhaVectorizer(VectorizerConfig(theme="print"))
+    res = vec.vectorize(s["degraded_bgr"], detected_labels=s["labels"], metadata={"domain": "chemistry"})
+    for st in res["strokes"]:
+        if st.get("type") == "circle":
+            assert st["r"] <= 20.0, f"Unexpected giant circle r={st['r']} on Electrodialysis diagram!"
+    assert len(res["dashed"]) == 0, "Blue water-hatch dashes must not chain into structural dashed zig-zags!"
+    assert "Anode" in res["svg"]
+    assert "Bowman" not in res["svg"]
