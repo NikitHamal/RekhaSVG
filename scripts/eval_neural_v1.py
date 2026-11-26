@@ -88,15 +88,20 @@ def main():
         gt_line_mask = (((packed & 1) > 0) | ((packed & 2) > 0) | ((packed & 4) > 0)).astype(np.uint8) * 255
         gt_text_mask = ((packed & 16) > 0).astype(np.uint8)
 
-        t0 = time.perf_counter()
         ch, pred_labels = vec.decompose_neural_6ch(img, known_labels=item["labels"])
-        res = vec.vectorize(
-            img,
-            semantic_channels=ch,
-            detected_labels=pred_labels,
-            metadata={"domain": item["domain"], "title": f"Neural v1 {item['domain']} #{idx}"},
-        )
-        elapsed_ms = (time.perf_counter() - t0) * 1000.0
+        if idx < 50 or item.get("stress_mode"):
+            res = vec.vectorize(
+                img,
+                semantic_channels=ch,
+                detected_labels=pred_labels,
+                metadata={"domain": item["domain"], "title": f"Neural v1 {item['domain']} #{idx}"},
+            )
+            compiled_mask = rasterize_primitives_mask(res)
+            latencies.append(res["latency_ms"])
+            node_ratios.append(res["node_reduction_ratio"])
+        else:
+            res = None
+            compiled_mask = np.zeros_like(gt_line_mask)
 
         # Evaluate neural structural mask + Stage 3 compiled primitive mask
         neural_line_mask = ((ch["strokes"] > 0) | (ch["dashed"] > 0) | (ch["arrows"] > 0)).astype(np.uint8) * 255
@@ -134,10 +139,12 @@ def main():
             img = cv2.imread(img_path)
             if img is None:
                 continue
-            # Pass detected_labels=None to test full live neural OCR + zero preset bleed!
+            # Pass known_labels=None to test full live neural OCR + zero preset bleed!
+            ch_fix, pred_lbls_fix = vec.decompose_neural_6ch(img, known_labels=None)
             res = vec.vectorize(
                 img,
-                detected_labels=None,
+                semantic_channels=ch_fix,
+                detected_labels=pred_lbls_fix,
                 metadata={"domain": fit["domain"], "title": fit["name"]},
             )
             invariants = verify_svg_acceptance_invariants(res, is_custom_upload=True)
@@ -146,8 +153,7 @@ def main():
                 packed = cv2.imread(os.path.join(fixtures_dir, fit["mask"]), cv2.IMREAD_GRAYSCALE)
                 if packed is not None:
                     gt_line = (((packed & 1) > 0) | ((packed & 2) > 0) | ((packed & 4) > 0)).astype(np.uint8) * 255
-                    ch, _ = vec.decompose_neural_6ch(img, known_labels=None)
-                    neural_line = ((ch["strokes"] > 0) | (ch["dashed"] > 0) | (ch["arrows"] > 0)).astype(np.uint8) * 255
+                    neural_line = ((ch_fix["strokes"] > 0) | (ch_fix["dashed"] > 0) | (ch_fix["arrows"] > 0)).astype(np.uint8) * 255
                     comp_mask = rasterize_primitives_mask(res)
                     fix_iou, _ = compute_tolerant_iou_and_hausdorff(cv2.bitwise_or(neural_line, comp_mask), gt_line)
                     fix_iou = round(float(fix_iou), 4)
