@@ -1,24 +1,15 @@
-# RekhaSVG — Engineering Status & GPU Handoff Report
+# RekhaSVG — Neural v1 Engineering Status Report
 
-## 1. Completed Milestones (CPU Session `sb-512e1e9b6c4d922b`)
+## Completed Milestones (Shared Blackwell Session `sb-23410fd97ef00e15`)
 
-- [x] **Stage 3 Deterministic Geometric Primitive & Cubic Bezier SVG Compiler**:
-  - Implemented in Python (`rekhasvg/primitives.py`, `rekhasvg/svg_builder.py`, `rekhasvg/vectorizer.py`) and mirrored 1:1 in zero-dependency Browser ES Modules (`docs/engine/primitives.js`, `docs/engine/svg_builder.js`, `docs/engine/vectorizer.js`).
-  - Verified exact 1:1 Python $\leftrightarrow$ Node/Browser JS output parity (`pytest -q tests/`).
-  - Measured `84.35 ms` mean single-thread compilation latency (`89.54 ms` P95) and `25.17x` node reduction across the 500-diagram holdout benchmark (`eval/baseline_v0.json`).
-- [x] **Procedural Nepal STEM Textbook Dataset Factory (`scripts/gen_textbook_dataset.py`)**:
-  - Generated **32,000** training samples (`8,000` Physics, `8,000` Biology, `8,000` Chemistry, `8,000` Math/CS) plus **500** unseen benchmark diagrams and **20** camera stress tests (`eval/bench_500/`).
-  - Synced all **16 compressed shards** (`shard_000.npz` .. `shard_015.npz`) to private Hugging Face dataset repo `NikitHamal/rekhasvg-data`.
-- [x] **Neural Architecture & INT8 ONNX Verification (`eval/onnx_status.json`)**:
-  - `RekhaNet` (`rekhasvg/rekha_net.py`): `6.31 MB` INT8 ONNX ($\le 7.5\text{ MB}$ budget), `203.82 ms` CPU inference, trained with Focal + Soft-Dice + Soft-ClDice centerline loss + Edge-Weighted L1.
-  - `RekhaText` (`rekhasvg/rekha_text.py`): `4.37 MB` INT8 ONNX ($\le 4.5\text{ MB}$ budget), `3.21 ms` CPU inference, 214-symbol English + Nepali Devanagari + STEM CTC vocabulary.
-  - Total INT8 ONNX size: **10.68 MB** (strictly within the `10.0 - 15.0 MB` budget), **0 `ConvInteger` ops**, **0 NaNs**, verified in both Python `onnxruntime` and Node.js `onnxruntime-node`.
-- [x] **Material 3 Expressive (M3X) Live Interactive Studio (`docs/`)**:
-  - Deployed to GitHub Pages (`https://nikithamal.github.io/RekhaSVG/`).
-  - Features 10 curated Nepal STEM textbook sample presets, camera/photo upload, Split Before/After comparison slider, 1-click Layer Inspector, SEE/NEB/IOE/CEE Exam Quiz / Flashcard Mode, Click-to-Highlight callouts, inline bilingual label editing, 4 themes, and `.svg` / `.png` / `.html` export.
-
-## 2. Next Session (Blackwell / CUDA GPU) Turn-1 Command
-
-```bash
-bash scripts/run_gpu_training.sh
-```
+- [x] **Eliminated All 4 Real-World Textbook Diagram Bugs**:
+  1. **Zero Preset-Label Bleed (`docs/app.js`, `src/App.tsx`)**: Uploading any custom diagram or camera photo clears 100% of previous preset labels/metadata (`state.activeSampleIdx = -1`, `state.customLabels = []`) and executes live extraction.
+  2. **Stage 3 Geometric Vectorizer Guardrails (`rekhasvg/primitives.py`, `rekhasvg/vectorizer.py`, `docs/engine/primitives.js`, `docs/engine/vectorizer.js`)**: Added 4-quadrant angular coverage and bounding-box checks to Taubin circle & algebraic ellipse fitters (preventing tiny `+` or `o` glyphs from snapping into giant circles), 2D periodic water-hatch/stipple filtering so blue water dashes never chain into diagonal zig-zags, and 3px-dilated text-box exclusion masks.
+  3. **Strict Multi-Font Glyph Fallback & Automated Zero-Tofu Verification (`scripts/gen_textbook_dataset.py`)**: Verified `1,936` character instances across Noto Sans/Serif Devanagari, DejaVu Sans/Serif, Liberation Serif, FreeSerif, and STIX (`verify_zero_tofu() -> True`) so zero `□` boxes ever enter training data.
+  4. **High-Complexity v2 Textbook Corpus (`NikitHamal/rekhasvg-data` `v2/`)**: Generated **16,000** v2 512×512 textbook diagrams (including Electrodialysis colored water-hatch troughs, double-walled semi-permeable membranes, sol/crystalloid particle clusters, stacked two-line labels, clean digital + shadowed camera renders) and **96,000** spotless 32×192 OCR crops at `346.98 img/s`.
+- [x] **Trained Rekha-Net & Rekha-Text in bf16 AMP + Exported Verified INT8 ONNX (`NikitHamal/rekhasvg-models`)**:
+  - **Rekha-Net (`rekha_net_int8.onnx`)**: **6.32 MB** INT8 ONNX (`0 ConvInteger`, `0 NaNs`), `185.72 ms` Python CPU / `182.50 ms` Node CPU, achieving **0.9920 validation IoU / 0.9960 Dice** (`0.8938` end-to-end `bench_500` IoU / `0.9408` Dice, up `+0.3160` IoU over the `0.5778` v0 baseline) and **0.9341 IoU** on the colored Electrodialysis textbook diagram with `0.00000` text-to-stroke leakage.
+  - **Rekha-Text (`rekha_text_int8.onnx`)**: **4.39 MB** INT8 ONNX (`0 ConvInteger`, `0 NaNs`), `3.85 ms` Python CPU / `4.46 ms` Node CPU, achieving **0.03% overall validation CER** (`0.04%` English/STEM CER, `0.01%` Nepali Devanagari CER) and reading stacked two-line labels (`semi permeable / membrane`, `Water + / Electrolyte`, `Anode`, `Cathode`, `+`, `-`, `Sol particle`, `Crystalloid`).
+  - **Total Combined INT8 ONNX Footprint**: **10.71 MB** (strictly within the `10.0 - 15.0 MB` budget).
+- [x] **End-to-End Visual & Quantitative Proofs (`eval/neural_v1_report.json`, `eval/v1_neural_proofs/`)**:
+  - Saved 13 SVG proofs in `eval/v1_neural_proofs/` and verified all acceptance invariants (`zero_preset_label_bleed: true`, `giant_circle_false_positives: 0`, `zigzag_water_dashed_chains: 0`, `has_editable_svg_text: true`).

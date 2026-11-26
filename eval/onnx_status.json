@@ -1,14 +1,21 @@
 {
-  "rekha_net_int8_mb": 6.31,
-  "rekha_text_int8_mb": 4.37,
-  "total_int8_mb": 10.68,
+  "rekha_net_trained_weights": true,
+  "rekha_text_trained_weights": true,
+  "rekha_net_int8_mb": 6.32,
+  "rekha_text_int8_mb": 4.39,
+  "total_int8_mb": 10.71,
   "budget_min_mb": 10.0,
   "budget_max_mb": 15.0,
   "within_budget": true,
   "conv_integer_ops": 0,
   "nan_count": 0,
-  "rekha_net_cpu_ms": 203.82,
-  "rekha_text_cpu_ms": 3.21,
-  "cpu_latency_ms": 207.03,
-  "status": "Verified INT8 ONNX (0 ConvInteger, 0 NaNs)"
+  "rekha_net_fp32_int8_mad": 0.40671,
+  "rekha_text_fp32_int8_mad": 0.05757,
+  "rekha_net_cpu_ms": 185.72,
+  "rekha_text_cpu_ms": 3.85,
+  "cpu_latency_ms": 189.57,
+  "rekha_net_node_ms": 182.5,
+  "rekha_text_node_ms": 4.46,
+  "total_node_ms": 186.95,
+  "status": "Verified Trained INT8 ONNX v1 (0 ConvInteger, 0 NaNs)"
 }
