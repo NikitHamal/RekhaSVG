@@ -105,7 +105,6 @@ def main():
 
         # Evaluate neural structural mask + Stage 3 compiled primitive mask
         neural_line_mask = ((ch["strokes"] > 0) | (ch["dashed"] > 0) | (ch["arrows"] > 0)).astype(np.uint8) * 255
-        compiled_mask = rasterize_primitives_mask(res)
         eval_mask = cv2.bitwise_or(neural_line_mask, compiled_mask)
 
         iou, h_px = compute_tolerant_iou_and_hausdorff(eval_mask, gt_line_mask)
@@ -115,8 +114,6 @@ def main():
         ious.append(iou)
         dices.append(dice)
         hausdorffs.append(h_px)
-        latencies.append(res["latency_ms"])
-        node_ratios.append(res["node_reduction_ratio"])
         text_leaks.append(leak)
 
         if item.get("stress_mode"):
